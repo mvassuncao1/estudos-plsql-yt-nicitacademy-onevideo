@@ -1,0 +1,92 @@
+cells:
+  - kind: 2
+    value: "/*\r
+
+      Two blocks in  PLSQL\r
+
+      \r
+
+      1. Anonymous Block */\r
+
+      \r
+
+      DECLARE \r
+
+      \    -- Variable declarations / opctional\r
+
+      \    \r
+
+      BEGIN\r
+
+      \    -- Exatutable statements / mandatory\r
+
+      \    \r
+
+      \    EXCEPTION\r
+
+      \        -- Exception handling code / optional\r
+
+      \r
+
+      END;\r
+
+      /\r
+
+      \r
+
+      /*\r
+
+      2. Named Block - Stored as an object in DB\r
+
+      \    - PROCEDURE\r
+
+      \    - FUNCTION\r
+
+      \    - PACKAGE\r
+
+      \    - TRIGGER\r
+
+      */\r
+
+      \r
+
+      -------------------------------------------------------------------------\
+      -------\r
+
+      \r\n"
+    languageId: oracle-sql
+  - kind: 2
+    value: "// Sempre finalizar com / após END\r
+
+      begin\r
+
+      \   dbms_output.put_line('TESTE');\r
+
+      end;\r
+
+      /\r
+
+      \r
+
+      begin\r
+
+      \   dbms_output.put_line('TESTE2');\r
+
+      end;\r
+
+      /\r
+
+      \r
+
+      \ // Imprime o DBMS_OUTPUT na janela de saída de script\r
+
+      \ SET SERVEROUTPUT ON;\r
+
+      begin\r
+
+      \   dbms_output.put_line('TESTE3');\r
+
+      end;\r
+
+      /"
+    languageId: oracle-sql

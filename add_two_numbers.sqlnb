@@ -1,0 +1,21 @@
+cells:
+  - kind: 2
+    value: "declare\r
+
+      n1 number(10);\r
+
+      n2 number(10);\r
+
+      begin\r
+
+      n1 := 10;\r
+
+      n2 := 20;\r
+
+      dbms_output.put_line('A soma de ' || n1 || ' + ' || n2 || ' é: ' || (n1 +
+      n2));\r
+
+      end;\r
+
+      /"
+    languageId: oracle-sql

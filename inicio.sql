@@ -42,3 +42,21 @@ BEGIN
 DBMS_OUTPUT.PUT_LINE('TESTE3');
 END;
 /
+
+// Sempre finalizar com / após END
+begin
+   dbms_output.put_line('TESTE');
+end;
+/
+
+begin
+   dbms_output.put_line('TESTE2');
+end;
+/
+
+ // Imprime o DBMS_OUTPUT na janela de saída de script
+   SET SERVEROUTPUT ON;
+begin
+   dbms_output.put_line('TESTE3');
+end;
+/

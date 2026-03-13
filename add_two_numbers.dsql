@@ -1,0 +1,5 @@
+// Sempre finalizar com / após END
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Teste de bloco anônimo');
+END;
+/
