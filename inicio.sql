@@ -22,3 +22,25 @@ END;
     - PACKAGE
     - TRIGGER
 */
+
+--------------------------------------------------------------------------------
+
+// Sempre finalizar com / após END
+BEGIN
+DBMS_OUTPUT.PUT_LINE ('TESTE');
+END;
+/
+
+BEGIN
+DBMS_OUTPUT.PUT_LINE('TESTE2');
+END;
+/
+
+ // Imprime o DBMS_OUTPUT na janela de saída de script
+SET SERVEROUTPUT ON;
+BEGIN
+DBMS_OUTPUT.PUT_LINE('TESTE3');
+END;
+/
+
+DESCRIBE FUNCIONARIO
