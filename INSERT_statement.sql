@@ -1,4 +1,7 @@
--- Pode executar instrução direta
+
+TRUNCATE TABLE FUNCIONARIO;
+
+-- Pode executar instrução INSERT direta
 INSERT INTO funcionario (nome, salario) VALUES ('Gustavo', 653.45);
 
 DECLARE
@@ -15,7 +18,11 @@ END;
 BEGIN
 INSERT INTO FUNCIONARIO
             (NOME,          SALARIO) VALUES
-            ('Diana',        8971.62),
+            ('Marcos',        8971.62),
+            ('Josias',        1791.62),
+            ('José',          8971.62),
+            ('Diego',         1791.62),
+            ('Ivo',          10000.62),
             ('Josias',       1791.62);
 COMMIT;
 END;

@@ -1,3 +1,4 @@
+SET SERVEROUTPUT ON;
 DECLARE
 nome_funcionario    varchar2(100);
 salario_atual       number(10, 2);
@@ -10,3 +11,4 @@ BEGIN
     dbms_output.put_line('O salário de ' || nome_funcionario || ' é R$' || salario_atual);
 END;
 /
+
