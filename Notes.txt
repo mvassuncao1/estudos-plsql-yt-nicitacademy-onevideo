@@ -96,5 +96,76 @@ END;
 update CUSTOMER set dob = to_date('07/05/1983', 'dd/mm/yyyy') where cust_id = 1000;======================================================================
 select * from customer where cust_id > 5 order by cust_name;
 ======================================================================
+-- Buscar type do campo direto na tabela e aplicar o mesmo tipo na declaração da variável:
+DECLARE
+v_mobile_no SYSTEM.CUSTOMER.MOBILE_NO%type;
+BEGIN
+SELECT MOBILE_NO INTO V_MOBILE_NO FROM CUSTOMER WHERE CUST_ID = 1002;
+DBMS_OUTPUT.PUT_LINE('O número de telefone é ' || v_mobile_no);
+end;
+/
+======================================================================
+-- Pode ser feito com todas as colunas de uma vez:
+DECLARE
+v_customer CUSTOMER%rowtype;
+BEGIN
+SELECT * INTO v_customer FROM CUSTOMER WHERE CUST_ID = 1002;
+DBMS_OUTPUT.PUT_LINE('Para acessar uma variável dentro do retorno use ' || v_customer.city);
+END;
+/
 ======================================================================
 ======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+======================================================================
+1. O que escrever em MAIÚSCULAS?
+Use para tudo que faz parte da linguagem SQL e PL/SQL (palavras reservadas). Isso ajuda o olho a separar rapidamente a "lógica" dos "dados".
+•	Palavras-chave (Keywords): BEGIN, END, IF, ELSE, LOOP, DECLARE, PROCEDURE, FUNCTION.
+•	Comandos SQL: SELECT, INSERT, UPDATE, DELETE, FROM, WHERE, INTO, VALUES.
+•	Tipos de Dados: NUMBER, VARCHAR2, DATE, BOOLEAN, %TYPE, %ROWTYPE.
+________________________________________
+2. O que escrever em minúsculas?
+Use para os elementos que você criou (identificadores). Isso destaca o que é específico da sua regra de negócio.
+•	Nomes de Variáveis e Parâmetros: v_nome, p_cust_id, c_cursor.
+•	Nomes de Colunas e Tabelas: customer, cust_id, city, dob.
+•	Nomes de Subprogramas: calcula_idade, valida_cpf.
+________________________________________
+3. Guia de Estilo Visual (Resumo)
+Elemento		Padrão Recomendado		Exemplo
+Palavras Reservadas	TUDO MAIÚSCULO			SELECT, IF, EXCEPTION
+Variáveis Locais	minúsculas (prefixo v_)		v_cust_name, v_total
+Parâmetros de Funções	minúsculas (prefixo p_)		p_id_cliente, p_data
+Constantes		minúsculas (prefixo c_)		c_pi, c_taxa_juros
+Tabelas e Colunas	minúsculas			from customer where cust_id = ...
+________________________________________
+4. Por que usar prefixos? (v_, p_, c_)
+Em PL/SQL, isso é quase tão importante quanto a capitalização. Imagine o seguinte erro comum:
+SQL
+-- EXEMPLO RUIM: Conflito de nomes
+SELECT cust_name INTO cust_name FROM customer WHERE cust_id = cust_id;
+O Oracle pode se confundir se o nome da variável for igual ao nome da coluna. Usando o padrão de minúsculas com prefixos, o código fica limpo e seguro:
+SQL
+-- EXEMPLO BOM: Seguindo as boas práticas
+DECLARE
+   v_cust_name  customer.cust_name%TYPE; -- Variável em minúsculo
+BEGIN
+   SELECT cust_name 
+     INTO v_cust_name 
+     FROM customer 
+    WHERE cust_id = p_id; -- p_id vindo de um parâmetro
+END;
+Dica de Ouro: "Snake Case" vs "CamelCase"
+No ecossistema Oracle, o snake_case (palavras separadas por sublinhado: data_nascimento) é o padrão absoluto para nomes de colunas e variáveis. Evite o CamelCase (usado em Java/C#), pois o dicionário de dados do Oracle armazena tudo em maiúsculas internamente, e o underscore facilita muito a leitura.
+
