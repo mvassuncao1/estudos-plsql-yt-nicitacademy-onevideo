@@ -1,7 +1,8 @@
 BEGIN
 UPDATE  FUNCIONARIO2 SET
             NOME = 'Marcos Assunção Novo', SALARIO = 8791.62 * 1.05
-        WHERE ID_FUNCIONARIO = 3;
+        WHERE
+            ID_FUNCIONARIO = 3;
 COMMIT;
 END;
 /
