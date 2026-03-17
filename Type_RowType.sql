@@ -56,3 +56,19 @@ select cust_name, mobile_no into var_cust_name, result_mobile_no from CUSTOMER w
 dbms_output.put_line('O telefone de ' || var_cust_name || ' é ' || result_mobile_no);
 end;
 /
+
+DECLARE
+v_mobile_no SYSTEM.CUSTOMER.MOBILE_NO%type;
+BEGIN
+SELECT MOBILE_NO INTO V_MOBILE_NO FROM CUSTOMER WHERE CUST_ID = 1002;
+DBMS_OUTPUT.PUT_LINE('O número de telefone é ' || v_mobile_no);
+end;
+/
+
+DECLARE
+v_customer CUSTOMER%rowtype;
+BEGIN
+SELECT * INTO v_customer FROM CUSTOMER WHERE CUST_ID = 1002;
+DBMS_OUTPUT.PUT_LINE('Para acessar uma variável dentro do retorno use ' || v_customer.city);
+END;
+/
