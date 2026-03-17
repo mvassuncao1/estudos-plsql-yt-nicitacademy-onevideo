@@ -70,5 +70,8 @@ v_customer CUSTOMER%rowtype;
 BEGIN
 SELECT * INTO v_customer FROM CUSTOMER WHERE CUST_ID = 1002;
 DBMS_OUTPUT.PUT_LINE('Para acessar uma variável dentro do retorno use ' || v_customer.city);
+DBMS_OUTPUT.PUT_LINE('O dia de nascimento é ' || TO_CHAR(v_customer.bod, 'dd'));
+DBMS_OUTPUT.PUT_LINE('O mes de nascimento é ' || TO_CHAR(v_customer.bod, 'mm'));
+DBMS_OUTPUT.PUT_LINE('O ano de nascimento é ' || TO_CHAR(v_customer.bod, 'yyyy'));
 END;
 /
