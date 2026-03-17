@@ -17,13 +17,10 @@ END;
 
 BEGIN
 INSERT INTO FUNCIONARIO
-            (NOME,          SALARIO) VALUES
-            ('Marcos',        8971.62),
-            ('Josias',        1791.62),
-            ('José',          8971.62),
-            ('Diego',         1791.62),
-            ('Ivo',          10000.62),
-            ('Josias',       1791.62);
+            (NOME,     SALARIO) VALUES
+            ('Josias', 1231.62),
+            ('Diego',  1791.62),
+
 COMMIT;
 END;
 /

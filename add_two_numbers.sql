@@ -7,8 +7,10 @@ END;
 DECLARE
 -- Declaração de variáveis
 -- Podemos atribuir valores na declaração
-n1 NUMBER(10) := 10;
-n2 NUMBER(10) := 20;
+n1 	NUMBER(10);
+n2 	NUMBER(10) 	:= 20;
+n3 	NUMBER(10,2) 	:= 3.14;
+nome	VARCHAR2(40);
 
 BEGIN
 -- Podemos alterar valores das variáveis no BEGIN

@@ -1,0 +1,100 @@
+DECLARE 
+-- Variable declarations / opctional
+n1 	NUMBER(10);
+n2 	NUMBER(10) 	:= 20;
+n3 	NUMBER(10,2) 	:= 3.14;
+nome	VARCHAR2(40);    
+BEGIN
+-- Executable statements / mandatory
+    
+EXCEPTION
+-- Exception handling code / optional
+
+END;
+/
+=====================================================================
+-- Mostrar texto no console:
+dbms_output.put_line('Texto fico vem dentro de aspas simples ' || variavel_declarada_no_DECLARE);
+=====================================================================
+-- Mostrar saídas de Script do dbms_output.put_line na Saída Dbms:
+SET SERVEROUTPUT ON;
+BEGIN
+DBMS_OUTPUT.PUT_LINE('TESTE3');
+END;
+/
+=====================================================================
+-- Receber input do usuário:
+DECLARE
+n1     NUMBER(10, 2) := &Texto_que_vai_aparecer_no_input;
+======================================================================
+CREATE TABLE FUNCIONARIO2 (
+    ID_FUNCIONARIO NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    NOME           VARCHAR2(100),
+    SALARIO        NUMBER(10, 2)
+);
+COMMIT;
+======================================================================
+BEGIN
+INSERT INTO FUNCIONARIO2 (NOME, SALARIO) VALUES (
+SELECT NOME, SALARIO FROM FUNCIONARIO WHERE ID_FUNCIONARIO = 13);
+COMMIT;
+END;
+/
+======================================================================
+-- Pode executar instrução INSERT direta
+INSERT INTO funcionario (nome, salario) VALUES ('Gustavo', 653.45);
+======================================================================
+DECLARE
+nome_func           varchar2(100);
+salario_inicial     number(10, 2);
+BEGIN
+nome_func           := 'João Vitor 1598874';
+salario_inicial     := 1791.05;
+INSERT INTO FUNCIONARIO (NOME, SALARIO) VALUES (nome_func, salario_inicial);
+COMMIT;
+END;
+/
+======================================================================
+SET SERVEROUTPUT ON;
+DECLARE
+nome_funcionario    varchar2(100);
+salario_atual       number(10, 2);
+BEGIN
+    SELECT  nome            , salario 
+    INTO    nome_funcionario, salario_atual
+    FROM    FUNCIONARIO 
+    WHERE   ID_FUNCIONARIO = 4;
+    
+    dbms_output.put_line('O salário de ' || nome_funcionario || ' é R$' || salario_atual);
+END;
+/
+======================================================================
+DECLARE
+n1     NUMBER(10, 2) := &n1PodeMudarNomeAqui;
+n2     NUMBER(10, 2) := &n2PodeMudarNomeAqui;
+result NUMBER(10, 2);
+BEGIN
+result := n1 + n2;
+dbms_output.put_line('A soma de ' || n1 || ' + ' || n2 || ' = ' || result);
+END;
+/
+
+SET SERVEROUTPUT ON;
+DECLARE
+-- n3 number(10, 2) NOT NULL; -- dá erro pois n3 não pode receber valores nulos.
+n3 number(10, 2);
+n4 number(10, 2);
+r1 number(10, 2);
+BEGIN
+n3 := null;
+n4 := 10;
+r1 := n3 + n4;
+dbms_output.put_line('A soma de ' || n3 || ' + ' || n4 || ' = ' || r1); -- apresenta valores em branco de n3 e r1 pois n3 tem valor NULL
+END;
+/
+======================================================================
+update CUSTOMER set dob = to_date('07/05/1983', 'dd/mm/yyyy') where cust_id = 1000;======================================================================
+
+======================================================================
+======================================================================
+======================================================================
