@@ -8,3 +8,18 @@ ELSE
 END IF;
 END;
 /
+
+DECLARE
+n1 NUMBER := &número;
+BEGIN
+IF n1 > 10 THEN
+    DBMS_OUTPUT.PUT_LINE('Maior que 10');
+ELSIF n1 = 10 THEN
+    DBMS_OUTPUT.PUT_LINE('Igual a 10');
+ELSE
+    DBMS_OUTPUT.PUT_LINE('Menor que 10');
+END IF;
+END;
+/
+
+
