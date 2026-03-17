@@ -44,11 +44,11 @@ BEGIN
 END;
 /
 
-select * from customer order by cust_name;
+select * from customer where cust_id > 5 order by cust_name;
 
 -- Give customer ID and get the mobile number
 declare
-input_cost_id       number(8)       := &ID_do_cliente;
+input_cost_id       number(8)     := &ID_do_cliente;
 var_cust_name       varchar2(40);
 result_mobile_no    number(11);
 begin
