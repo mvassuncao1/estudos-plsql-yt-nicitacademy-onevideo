@@ -1,0 +1,16 @@
+SET SERVEROUTPUT ON;
+DECLARE
+    V_NM_FUNCIONARIO funcionario.nome%Type;
+BEGIN
+    SELECT NOME
+    INTO V_NM_FUNCIONARIO
+    FROM funcIonario
+    WHERE id_funcionario = 10;
+    
+    IF V_NM_FUNCIONARIO = 'Marcos' THEN
+        DBMS_OUTPUT.PUT_LINE(V_NM_FUNCIONARIO);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('NOK');
+    END IF;
+END;
+/
