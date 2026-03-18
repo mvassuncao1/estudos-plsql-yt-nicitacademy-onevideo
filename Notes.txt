@@ -1,9 +1,10 @@
 DECLARE 
 -- Variable declarations / opctional
-n1 	NUMBER(10);
-n2 	NUMBER(10) 	:= 20;
-n3 	NUMBER(10,2) 	:= 3.14;
-nome	VARCHAR2(40);    
+v_var_name	table.filed%Type;
+n1 		NUMBER(10);
+n2 		NUMBER(10) 	:= 20;
+n3 		NUMBER(10,2) 	:= 3.14;
+nome		VARCHAR2(40);    
 BEGIN
 -- Executable statements / mandatory
     
@@ -117,8 +118,35 @@ DBMS_OUTPUT.PUT_LINE('O mes de nascimento é ' || TO_CHAR(v_customer.bod, 'mm'))
 DBMS_OUTPUT.PUT_LINE('O ano de nascimento é ' || TO_CHAR(v_customer.bod, 'yyyy'));
 END;
 /
-======================================================================
+EXCEPTION ======================================================================
+DECLARE
+    V_RESULTADO NUMBER;
+    V_NUMERO    NUMBER := &Digite_um_Numero;
+BEGIN
+    -- Código que pode gerar diferentes erros
+    V_RESULTADO := 100 / V_NUMERO;
+    
+    SELECT column_name INTO V_RESULTADO 
+    FROM table_name 
+    WHERE id = V_NUMERO;
+EXCEPTION
+    -- 1. Erro específico: Divisão por zero
+    WHEN ZERO_DIVIDE THEN
+        DBMS_OUTPUT.PUT_LINE('Erro: Você tentou dividir por zero!');
 
+    -- 2. Erro específico: O SELECT não retornou nada
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Erro: O ID informado não existe no banco.');
+
+    -- 3. Erro específico: O SELECT retornou mais de uma linha (e a variável é simples)
+    WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('Erro: A consulta retornou registros demais.');
+
+    -- 4. "Curinga": Captura qualquer outro erro não listado acima
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Ocorreu um erro inesperado: ' || SQLCODE || ' - ' || SQLERRM);
+END;
+/
 ======================================================================
 ======================================================================
 ======================================================================
