@@ -1,10 +1,9 @@
 # Vídeo aula de PL/SQL no YouTube
 
-Canal: [NIC IT ACADEMY](https://www.youtube.com/@NICITACADEMY)
-
+##Canal: [NIC IT ACADEMY](https://www.youtube.com/@NICITACADEMY)
 Vídeo: [MASTER Oracle PLSQL in 30 Days or LESS!](https://www.youtube.com/watch?v=9ic3KEH4Ah4)
 
-## Vídeo Index:
+Vídeo Index:
 00:00:00 PLSQL tutorial for beginners\
 00:01:21 Introduction to PLSQL tutorial\
 00:12:56 What is an anonymous block in PLSQL?, what is a named block in PLSQL?\
@@ -36,9 +35,23 @@ Vídeo: [MASTER Oracle PLSQL in 30 Days or LESS!](https://www.youtube.com/watch?
 06:29:20 Difference between procedure and function\
 07:15:05 Autonomous Transaction in PLSQL\
 07:40:57 Triggers in Oracle\
-08:18:10 Instead of Trigger in PLSQL,  Mutating table error in PLSQL\
+08:18:10 Instead of Trigger in PLSQL, Mutating table error in PLSQL\
 09:09:37 Collections in PLSQL\
 09:57:01 Bulk Collect in PLSQL\
 10:23:06 Dynamic SQL in PLSQL\
 10:42:11 Exception handling in PLSQL\
 11:05:56 Temporary tables in PLSQL\
+
+##Canal: [William Miranda](https://www.youtube.com/@wmendesmiranda1)
+Playlist: [Curso PL-SQL](https://www.youtube.com/watch?v=vOqatv42tkc&list=PLadGAodX-xx6mSc4LU9GKs9tOdXCeaAWO&index=2)
+Aula 01 - Instalando o Oracle Express
+Aula 02 - Liberando o Schema HR no Oracle XE
+Aula 03 - Oracle SQL
+Aula 04 - Primeiros Passos no PL/SQL
+Aula 05 - Oracle Procedure PL/SQL
+1ª Aula PL/SQL - Visão Geral da Linguagem!
+Aula 09 - PL/SQL Fundamentos - Curso Oracle PL/SQL
+Aula 10 - Gerenciamento de Erros - Cursor Oracle PL/SQL
+11ª Aula Curso Oracle PL/SQL - Procedures / Functions / Cursores
+12º - Sequencies , Packages e Triggers - Curso Oracle PL/SQL Grátis
+Aula 07 - SQL Parte 04 - Select - Curso Oracle PL/SQL
