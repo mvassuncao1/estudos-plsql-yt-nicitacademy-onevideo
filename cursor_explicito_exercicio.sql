@@ -1,3 +1,5 @@
+--Liste todos os funcionários com salário menor que R$3000 e dê um aumento de 15,89%. Retorne ID, nome, salário atual, salário novo
+
 DECLARE
 v_salario_abaixo_de funcionario.salario%TYPE := 3000; --&valor_minimo_do_salario;
 CURSOR cur_funcionarios(v_salario_abaixo_de funcionario.salario%TYPE) IS
@@ -9,5 +11,5 @@ END LOOP;
 END;
 /
 
---Liste todos os funcionários com salário menor que R$3000 e dê um aumento de 15,89%. Retorne ID, nome, salário atual, salário novo
+
 
