@@ -10,6 +10,3 @@ FOR funcionario IN cur_funcionarios(v_salario_abaixo_de) LOOP
 END LOOP;
 END;
 /
-
-
-
