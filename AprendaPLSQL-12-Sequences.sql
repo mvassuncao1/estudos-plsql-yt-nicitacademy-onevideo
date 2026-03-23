@@ -1,6 +1,9 @@
 CREATE SEQUENCE SQ_FUNCIONARIO
 INCREMENT BY 1 
-START WITH 1
+START WITH 23
 MAXVALUE 9999999999;
 
--- Para pegar o próximo valor usar SQ_FUNCIONARIO.NEXTVALUE
+-- Para pegar o próximo valor usar SQ_FUNCIONARIO.NEXTVAL
+
+INSERT INTO FUNCIONARIO (ID_FUNCIONARIO,            NOME,   SALARIO) VALUES
+                        (sq_funcionario.nextval, 'Eduardo', 1791.66);
