@@ -1,0 +1,10 @@
+DECLARE
+--V_ID_FUNCIONARIO FUNCIONARIO.ID_FUNCIONARIO%TYPE;
+V_NOME           FUNCIONARIO.NOME%TYPE;
+V_SALARIO        FUNCIONARIO.SALARIO%TYPE;
+BEGIN
+PKG_CONTROLA_FUNCIONARIO.SP_REL_FUNCIONARIOS(P_ID_FUNCIONARIO   => 10,
+                                             P_NOME             => V_NOME,
+                                             P_SALARIO          => V_SALARIO);
+DBMS_OUTPUT.PUT_LINE(V_NOME || ' -> R$ ' || V_SALARIO);
+END;
